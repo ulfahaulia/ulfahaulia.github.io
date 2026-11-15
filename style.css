@@ -1,0 +1,314 @@
+/* =========================
+   FONT IMPORTS
+   ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Sacramento&display=swap');
+
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   COLOR PALETTE (NEW BLUE X BURGUNDY)
+   ========================= */
+
+:root {
+    --burgundy: #64313E;
+    --burgundy-dark: #4a232e;
+    --pastel-blue: #C1DBE8;
+    --bg-light: #eaf2f7;
+    --white: #FFFFFF;
+    --text-dark: #2c161d;
+}
+
+
+/* =========================
+   BODY
+   ========================= */
+
+body {
+    font-family: 'Fredoka', cursive, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--burgundy);
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    background-color: var(--burgundy);
+    color: var(--white);
+    text-align: center;
+    padding: 35px 20px;
+
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    box-shadow: 0 6px 18px rgba(100, 49, 62, 0.25);
+}
+
+/* Judul Sambung Lucu */
+header h1 {
+    margin-bottom: 5px;
+
+    font-family: 'Sacramento', cursive;
+    font-size: 52px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.2;
+
+    color: var(--white);
+}
+
+header p {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    color: var(--pastel-blue);
+}
+
+
+/* =========================
+   NAVIGASI
+   ========================= */
+
+nav {
+    background-color: var(--pastel-blue);
+    text-align: center;
+    padding: 12px;
+}
+
+nav a {
+    display: inline-block;
+
+    color: var(--burgundy);
+    background-color: transparent;
+
+    text-decoration: none;
+
+    padding: 10px 22px;
+    margin: 3px;
+
+    border-radius: 30px;
+
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--white);
+    color: var(--burgundy);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   AREA KONTEN (MAIN)
+   ========================= */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 30px auto;
+
+    background-color: var(--white);
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 8px 25px rgba(100, 49, 62, 0.12);
+}
+
+/* Kombinasi Font Sambung pada Sub-Judul Main */
+main h2 {
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    font-family: 'Sacramento', cursive;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.3;
+
+    color: var(--burgundy);
+}
+
+
+/* =========================
+   TEKS MAIN
+   ========================= */
+
+main h1,
+main h3,
+main h4,
+main h5,
+main h6 {
+    font-family: 'Sacramento', cursive;
+    color: var(--burgundy);
+    margin-bottom: 15px;
+}
+
+main p,
+main span,
+main label,
+main li {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--text-dark);
+}
+
+
+/* =========================
+   LINK DI MAIN
+   ========================= */
+
+main a {
+    color: var(--burgundy);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+main a:hover {
+    color: var(--burgundy-dark);
+    text-decoration: underline;
+}
+
+
+/* =========================
+   IFRAME
+   ========================= */
+
+iframe {
+    width: 100%;
+    height: 500px;
+
+    border: 3px solid var(--pastel-blue);
+
+    border-radius: 18px;
+
+    background-color: var(--bg-light);
+
+    box-shadow: 0 5px 18px rgba(100, 49, 62, 0.08);
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background-color: var(--pastel-blue);
+
+    color: var(--burgundy);
+
+    text-align: center;
+
+    padding: 22px;
+    margin-top: 30px;
+
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+footer p {
+    margin: 0;
+
+    font-family: 'Fredoka', sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--burgundy);
+}
+
+
+/* =========================
+   TOMBOL
+   ========================= */
+
+button {
+    background-color: var(--burgundy);
+
+    color: var(--white);
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 25px;
+
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--pastel-blue);
+
+    color: var(--burgundy);
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media screen and (max-width: 600px) {
+
+    header {
+        padding: 28px 15px;
+    }
+
+    header h1 {
+        font-size: 38px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 6px 20px;
+    }
+
+    main {
+        width: 95%;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    main h2 {
+        font-size: 32px;
+    }
+
+    iframe {
+        height: 400px;
+    }
+
+    footer {
+        padding: 18px;
+    }
+}

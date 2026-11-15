@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Lumière & Lullaby</title>
+
+    <!-- FONT IMPORTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #FFF7E6;
+            color: #2D3A47;
+            padding: 30px 20px;
+            min-height: 100vh;
+        }
+
+        .contact-card {
+            background-color: #FFFFFF;
+            width: 100%;
+            max-width: 750px;
+            padding: 35px;
+            margin: auto;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(180, 106, 114, 0.15);
+            text-align: center;
+            border: 2px solid #F7C8D3;
+            transition: 0.3s ease;
+        }
+
+        .contact-card:hover {
+            box-shadow: 0 12px 30px rgba(180, 106, 114, 0.22);
+        }
+
+        .greeting-tag {
+            font-family: 'Sacramento', cursive;
+            font-size: 34px;
+            color: #A8B58A;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-family: 'Sacramento', cursive;
+            font-size: 48px;
+            color: #B46A72;
+            margin-bottom: 15px;
+        }
+
+        .divider {
+            width: 65px;
+            height: 3px;
+            background-color: #F7C8D3;
+            margin: 0 auto 25px;
+            border-radius: 2px;
+        }
+
+        /* HERO IMAGE */
+        .contact-image {
+            width: 100%;
+            max-width: 500px;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 5px solid #FFF7E6;
+            margin-bottom: 25px;
+            transition: 0.3s ease;
+        }
+
+        .contact-image:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: #B46A72;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* CONTACT INFORMATION */
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+            margin-top: 25px;
+        }
+
+        .info-item {
+            background-color: #FFF7E6;
+            padding: 18px 20px;
+            border-radius: 18px;
+            border-left: 4px solid #B46A72;
+            transition: 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateX(6px);
+            background-color: #F7C8D3;
+        }
+
+        .info-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #B46A72;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            color: #2D3A47;
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        .info-value a {
+            color: #2D3A47;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .info-value a:hover {
+            color: #B46A72;
+        }
+
+        /* INTERACTIVE BUTTONS */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background-color: #B46A72;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #A8B58A;
+            transform: translateY(-3px);
+        }
+
+        /* EXTRA MESSAGE */
+        .message-box {
+            background-color: #FFF7E6;
+            border-left: 4px solid #A8B58A;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .message-box p {
+            color: #B46A72;
+            margin-bottom: 0;
+        }
+
+        .footer-note {
+            font-family: 'Sacramento', cursive;
+            font-size: 28px;
+            color: #A8B58A;
+            margin-top: 25px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 480px) {
+            .contact-card {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .greeting-tag {
+                font-size: 28px;
+            }
+
+            .info-value {
+                font-size: 14px;
+            }
+
+            .contact-image {
+                height: 180px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="contact-card">
+
+        <div class="greeting-tag">
+            We'd Love to Hear From You
+        </div>
+
+        <h1>Kontak Lumière & Lullaby</h1>
+
+        <div class="divider"></div>
+
+        <!-- BRAND IMAGE -->
+        <img src="strawberry.jfif"
+             class="contact-image"
+             alt="Lumière & Lullaby Scented Candle">
+
+        <h2>Let's Stay Connected!</h2>
+
+        <p>
+            Punya pertanyaan, ingin mengetahui lebih banyak
+            tentang produk kami, atau sekadar ingin menyapa?
+            Kami selalu senang mendengar dari Anda!
+            Jangan ragu untuk menghubungi Lumière & Lullaby
+            melalui informasi kontak berikut.
+        </p>
+
+        <!-- CONTACT INFORMATION -->
+        <div class="info-container">
+
+            <div class="info-item">
+                <div class="info-label">📍 Alamat</div>
+                <div class="info-value">
+                    Jl. Kubang Selatan No. 195 Bandung
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-label">📞 Telepon / WhatsApp</div>
+                <div class="info-value">
+                    <a href="https://wa.me/6285795477990" target="_blank">
+                        0857-95477990
+                    </a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-label">✉️ Email</div>
+                <div class="info-value">
+                    <a href="mailto:lumiere.lullaby@gmail.com">
+                        lumiere.lullaby@gmail.com
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- INTERACTIVE BUTTONS -->
+        <div class="button-container">
+
+            <a href="https://wa.me/6285795477990"
+               target="_blank"
+               class="contact-button">
+                Chat With Us ♡
+            </a>
+
+            <a href="mailto:lumiere.lullaby@gmail.com"
+               class="contact-button">
+                Send an Email ✉
+            </a>
+
+        </div>
+
+        <!-- EXTRA MESSAGE -->
+        <div class="message-box">
+            <p>
+                ✨ Your little moments matter to us!
+                Terima kasih telah menjadi bagian dari
+                dunia kecil Lumière & Lullaby.
+            </p>
+        </div>
+
+        <div class="footer-note">
+            Sweet Dreams & Soft Glow ♡
+        </div>
+
+    </div>
+
+</body>
+
+</html>

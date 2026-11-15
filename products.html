@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products - Lumière & Lullaby</title>
+
+    <!-- FONT IMPORTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #FFF7E6;
+            color: #2D3A47;
+            padding: 30px 20px;
+            min-height: 100vh;
+        }
+
+        /* MAIN CONTAINER */
+
+        .products-container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #FFFFFF;
+            padding: 35px;
+            border-radius: 25px;
+            border: 2px solid #F7C8D3;
+            box-shadow: 0 8px 25px rgba(180, 106, 114, 0.15);
+        }
+
+        /* HEADER */
+
+        .greeting-tag {
+            font-family: 'Sacramento', cursive;
+            font-size: 34px;
+            color: #A8B58A;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Sacramento', cursive;
+            font-size: 52px;
+            color: #B46A72;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .divider {
+            width: 65px;
+            height: 3px;
+            background-color: #F7C8D3;
+            margin: 0 auto 25px;
+            border-radius: 5px;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #B46A72;
+            font-size: 23px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        /* PRODUCT GRID */
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        /* PRODUCT CARD */
+
+        .product-card {
+            background-color: #FFF7E6;
+            border: 1px solid #F7C8D3;
+            border-radius: 20px;
+            padding: 18px;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 20px rgba(180, 106, 114, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            transition: 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.02);
+        }
+
+        .category {
+            display: inline-block;
+            background-color: #F7C8D3;
+            color: #B46A72;
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            color: #B46A72;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 14px;
+            line-height: 1.7;
+            min-height: 95px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #B46A72;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* BUTTON */
+
+        .discover-btn {
+            background-color: #B46A72;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .discover-btn:hover {
+            background-color: #A8B58A;
+            transform: translateY(-2px);
+        }
+
+        /* EXTRA DETAILS */
+
+        .extra-info {
+            display: none;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 12px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #2D3A47;
+            animation: appear 0.3s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* BOTTOM MESSAGE */
+
+        .bottom-message {
+            background-color: #FFF7E6;
+            border-left: 4px solid #A8B58A;
+            padding: 18px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .bottom-message p {
+            color: #B46A72;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .footer-note {
+            font-family: 'Sacramento', cursive;
+            font-size: 29px;
+            color: #A8B58A;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 700px) {
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products-container {
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .greeting-tag {
+                font-size: 28px;
+            }
+
+            .product-image {
+                height: 220px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="products-container">
+
+        <!-- HEADER -->
+
+        <div class="greeting-tag">
+            A Little Collection of Happiness
+        </div>
+
+        <h1>Our Lovely Products</h1>
+
+        <div class="divider"></div>
+
+        <p class="intro">
+            Setiap aroma memiliki cerita dan keistimewaannya sendiri.
+            Temukan scented candle favoritmu dan hadirkan sedikit
+            kehangatan serta kebahagiaan dalam setiap sudut ruangan.
+            Let's find your perfect scent!
+        </p>
+
+        <h2>Discover Our Candle Collection</h2>
+
+        <!-- PRODUCT GRID -->
+
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card">
+
+                <img src="lavender.jfif"
+                     class="product-image"
+                     alt="Lavender Dreams">
+
+                <div class="category">
+                    Relaxing Collection
+                </div>
+
+                <div class="product-name">
+                    Lavender Dreams
+                </div>
+
+                <p class="description">
+                    Aroma lavender yang lembut dan menenangkan,
+                    cocok untuk menemani waktu istirahat
+                    dan menciptakan suasana damai.
+                </p>
+
+                <div class="price">
+                    Rp 85.000
+                </div>
+
+                <button class="discover-btn"
+                        onclick="toggleDetails('detail1', this)">
+                    Discover More +
+                </button>
+
+                <div class="extra-info" id="detail1">
+                    Terinspirasi dari hamparan bunga lavender,
+                    koleksi ini menghadirkan suasana relaksasi
+                    untuk menemani malam yang tenang.
+                </div>
+
+            </div>
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card">
+
+                <img src="vanilla.jfif"
+                     class="product-image"
+                     alt="Vanilla Cloud">
+
+                <div class="category">
+                    Sweet Collection
+                </div>
+
+                <div class="product-name">
+                    Vanilla Cloud
+                </div>
+
+                <p class="description">
+                    Keharuman vanilla yang manis dan hangat,
+                    menciptakan suasana cozy seperti berada
+                    di dalam pelukan yang nyaman.
+                </p>
+
+                <div class="price">
+                    Rp 85.000
+                </div>
+
+                <button class="discover-btn"
+                        onclick="toggleDetails('detail2', this)">
+                    Discover More +
+                </button>
+
+                <div class="extra-info" id="detail2">
+                    Aroma vanilla yang lembut cocok untuk
+                    menciptakan suasana hangat, manis,
+                    dan menyenangkan di rumah.
+                </div>
+
+            </div>
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card">
+
+                <img src="pomegranate.jfif"
+     class="product-image"
+     alt="Pomegranate">
+
+                <div class="category">
+                    Elegant Collection
+                </div>
+
+                <div class="product-name">
+                    Mediterranean Fig
+                </div>
+
+                <p class="description">
+                    Terinspirasi dari kebun buah tin yang bermandikan sinar matahari. 
+                    Aroma segar daun hijau yang berpadu dengan manis alami buah tin 
+                    menciptakan nuansa liburan yang hangat dan menyegarkan di dalam rumah.
+
+                </p>
+
+                <div class="price">
+                    Rp 95.000
+                </div>
+
+                <button class="discover-btn"
+                        onclick="toggleDetails('detail3', this)">
+                    Discover More +
+                </button>
+
+                <div class="extra-info" id="detail3">
+                    Pilihan aroma yang cocok untuk kamu
+                    yang menyukai suasana tenang dengan
+                    sentuhan keharuman yang elegan.
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BOTTOM MESSAGE -->
+
+        <div class="bottom-message">
+
+            <p>
+                ✨ Find your favorite scent, light up your space,
+                and make every little moment special!
+            </p>
+
+        </div>
+
+        <div class="footer-note">
+            Sweet Dreams & Soft Glow ♡
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function toggleDetails(id, button) {
+
+            var detail = document.getElementById(id);
+
+            if (detail.style.display === "block") {
+
+                detail.style.display = "none";
+                button.innerHTML = "Discover More +";
+
+            } else {
+
+                detail.style.display = "block";
+                button.innerHTML = "Show Less −";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

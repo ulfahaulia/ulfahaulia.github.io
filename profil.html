@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Lumière & Lullaby</title>
+
+    <!-- FONT IMPORTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #FFF7E6;
+            color: #2D3A47;
+            padding: 30px 20px;
+            min-height: 100vh;
+        }
+
+        .profile-card {
+            background-color: #FFFFFF;
+            width: 100%;
+            max-width: 750px;
+            padding: 35px;
+            margin: auto;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(180, 106, 114, 0.15);
+            text-align: center;
+            border: 2px solid #F7C8D3;
+            transition: 0.3s ease;
+        }
+
+        .profile-card:hover {
+            box-shadow: 0 12px 30px rgba(180, 106, 114, 0.22);
+        }
+
+        .greeting-tag {
+            font-family: 'Sacramento', cursive;
+            font-size: 34px;
+            color: #A8B58A;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-family: 'Sacramento', cursive;
+            font-size: 50px;
+            color: #B46A72;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .divider {
+            width: 65px;
+            height: 3px;
+            background-color: #F7C8D3;
+            margin: 0 auto 25px;
+            border-radius: 2px;
+        }
+
+        /* FOTO */
+        .profile-image {
+            width: 100%;
+            max-width: 500px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 5px solid #FFF7E6;
+            box-shadow: 0 5px 15px rgba(180, 106, 114, 0.15);
+            margin-bottom: 25px;
+            transition: 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #B46A72;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #2D3A47;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        /* BRAND VALUES */
+        .values {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .value-item {
+            background-color: #FFF7E6;
+            color: #B46A72;
+            padding: 12px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid #F7C8D3;
+            transition: 0.3s;
+        }
+
+        .value-item:hover {
+            background-color: #F7C8D3;
+            transform: translateY(-3px);
+        }
+
+        /* INTERACTIVE BUTTON */
+        .read-button {
+            background-color: #B46A72;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .read-button:hover {
+            background-color: #A8B58A;
+            transform: translateY(-3px);
+        }
+
+        /* EXTRA STORY */
+        #more-story {
+            display: none;
+            background-color: #FFF7E6;
+            border-left: 4px solid #B46A72;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+            animation: appear 0.4s ease;
+        }
+
+        #more-story p {
+            margin-bottom: 8px;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .highlight {
+            background-color: #FFF7E6;
+            padding: 15px;
+            border-radius: 15px;
+            border-left: 4px solid #A8B58A;
+            font-size: 14px;
+            color: #B46A72;
+            margin-top: 25px;
+        }
+
+        .footer-note {
+            font-family: 'Sacramento', cursive;
+            font-size: 27px;
+            color: #A8B58A;
+            margin-top: 25px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 480px) {
+            .profile-card {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 39px;
+            }
+
+            .greeting-tag {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .profile-image {
+                height: 190px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-card">
+
+        <div class="greeting-tag">
+            A Little Story Behind Our Brand
+        </div>
+
+        <h1>Profil Lumière & Lullaby</h1>
+
+        <div class="divider"></div>
+
+        <!-- BRAND IMAGE -->
+        <img src="perkenalan.jfif"
+             class="profile-image"
+             alt="Scented Candle Lumière & Lullaby">
+
+        <h2>More Than Just a Candle!</h2>
+
+        <p>
+            Selamat datang di dunia <b>Lumière & Lullaby</b>,
+            tempat aroma, cahaya, dan kehangatan berpadu
+            menciptakan pengalaman yang istimewa.
+            Kami percaya bahwa sebuah lilin bukan sekadar
+            sumber cahaya, tetapi juga teman kecil untuk
+            menemani setiap momen berharga.
+        </p>
+
+        <p>
+            Terinspirasi dari keindahan hal-hal sederhana,
+            Lumière & Lullaby menghadirkan scented candle
+            dengan berbagai pilihan aroma yang lembut,
+            manis, dan menenangkan. Setiap aroma memiliki
+            cerita tersendiri untuk membuat suasana ruangan
+            terasa lebih nyaman dan menyenangkan.
+        </p>
+
+        <h2>Our Little Brand Values</h2>
+
+        <div class="values">
+            <div class="value-item">Sweet Fragrance</div>
+            <div class="value-item">Cozy Moments</div>
+            <div class="value-item">Soft Aesthetic</div>
+            <div class="value-item">Made with Love</div>
+        </div>
+
+        <!-- INTERACTIVE BUTTON -->
+        <button class="read-button" onclick="toggleStory()">
+            Read Our Story +
+        </button>
+
+        <!-- EXTRA INFORMATION -->
+        <div id="more-story">
+
+            <h2>A Little More About Us</h2>
+
+            <p>
+                Nama Lumière berasal dari bahasa Prancis
+                yang berarti cahaya, sedangkan Lullaby
+                menggambarkan sebuah lagu pengantar tidur
+                yang lembut dan menenangkan.
+            </p>
+
+            <p>
+                Melalui perpaduan keduanya, kami ingin
+                menghadirkan produk yang tidak hanya
+                mempercantik ruangan, tetapi juga menciptakan
+                suasana damai untuk beristirahat,
+                bersantai, dan menikmati waktu untuk diri sendiri.
+            </p>
+
+            <p>
+                Karena bagi kami, setiap orang berhak
+                memiliki little moment of happiness!
+            </p>
+
+        </div>
+
+        <div class="highlight">
+            ✨ Halaman profil Lumière & Lullaby dibuat
+            sebagai bagian dari proyek pembelajaran
+            pembuatan website HTML Informatika SMAN 3 Bandung.
+        </div>
+
+        <div class="footer-note">
+            Sweet Dreams & Soft Glow ♡
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function toggleStory() {
+            var story = document.getElementById("more-story");
+            var button = document.querySelector(".read-button");
+
+            if (story.style.display === "block") {
+                story.style.display = "none";
+                button.innerHTML = "Read Our Story +";
+            } else {
+                story.style.display = "block";
+                button.innerHTML = "Show Less −";
+            }
+        }
+    </script>
+
+</body>
+</html>

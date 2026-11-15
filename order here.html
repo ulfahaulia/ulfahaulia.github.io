@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Here - Lumière & Lullaby</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 35px 15px;
+            background: #FFF7E6;
+            color: #2D3A47;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .order-container {
+            max-width: 750px;
+            margin: auto;
+            padding: 35px;
+            background: white;
+            border: 3px solid #F7C8D3;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(180, 106, 114, 0.12);
+        }
+
+        .greeting {
+            font-family: 'Sacramento', cursive;
+            font-size: 42px;
+            color: #A8B58A;
+            text-align: center;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #B46A72;
+            font-size: 32px;
+            margin: 5px 0 10px;
+        }
+
+        .description {
+            text-align: center;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 13px 15px;
+            border: 2px solid #F7C8D3;
+            border-radius: 12px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 15px;
+            color: #2D3A47;
+            background: #FFF7E6;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #B46A72;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .order-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background: #B46A72;
+            color: white;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .order-button:hover {
+            background: #2D3A47;
+            transform: translateY(-2px);
+        }
+
+        .note {
+            text-align: center;
+            color: #777;
+            font-size: 13px;
+            margin-top: 18px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #B46A72;
+            font-family: 'Sacramento', cursive;
+            font-size: 28px;
+        }
+
+        @media (max-width: 600px) {
+            .order-container {
+                padding: 23px 18px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="order-container">
+
+        <p class="greeting">A little something for you</p>
+        <h1>Place Your Order</h1>
+
+        <p class="description">
+            Ready to bring a little warmth into your space?
+            Fill in the form below and let us know what you'd love to order!
+        </p>
+
+        <form id="orderForm">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="product">Choose Your Product</label>
+                <select id="product" required>
+                    <option value="">Select a candle</option>
+                    <option value="Lavender Dreams Scented Candle - Rp 85.000">Lavender Dreams - Rp 85.000</option>
+                    <option value="Vanilla Cloud Scented Candle - Rp 85.000">Vanilla Cloud - Rp 85.000</option>
+                    <option value="Warm Sandalwood Scented Candle - Rp 95.000">Warm Sandalwood - Rp 95.000</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" min="1" value="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Delivery Address</label>
+                <textarea id="address" placeholder="Enter your complete address" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Additional Notes (Optional)</label>
+                <textarea id="notes" placeholder="Any special requests?"></textarea>
+            </div>
+
+            <button type="submit" class="order-button">
+                Order via WhatsApp
+            </button>
+
+        </form>
+
+        <p class="note">
+            Your order details will be sent directly to our WhatsApp.
+        </p>
+
+        <div class="footer">
+            Sweet Dreams & Soft Glow
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("orderForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const product = document.getElementById("product").value;
+            const quantity = document.getElementById("quantity").value;
+            const address = document.getElementById("address").value;
+            const notes = document.getElementById("notes").value || "-";
+
+            const phoneNumber = "6285795477990";
+
+            const message =
+                "Hello Lumière & Lullaby! I would like to place an order.%0A%0A" +
+                "*Order Details*%0A" +
+                "Name: " + encodeURIComponent(name) + "%0A" +
+                "Product: " + encodeURIComponent(product) + "%0A" +
+                "Quantity: " + encodeURIComponent(quantity) + "%0A" +
+                "Address: " + encodeURIComponent(address) + "%0A" +
+                "Additional Notes: " + encodeURIComponent(notes);
+
+            const whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + message;
+
+            window.open(whatsappURL, "_blank");
+        });
+    </script>
+
+</body>
+</html>
