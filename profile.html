@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Lumière & Lullaby</title>
+
+    <!-- FONT IMPORTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #FFF7E6; /* Vanilla Cream */
+            color: #2D3A47; /* Midnight Lagoon */
+            padding: 30px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .profile-card {
+            background-color: #FFFFFF;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(180, 106, 114, 0.15);
+            text-align: center;
+            border: 2px solid #F7C8D3; /* Blush Petal */
+        }
+
+        /* Label Sambung Manis */
+        .greeting-tag {
+            font-family: 'Sacramento', cursive;
+            font-size: 32px;
+            color: #A8B58A; /* Sage Leaf */
+            margin-bottom: 5px;
+        }
+
+        /* Judul Profil */
+        h1 {
+            font-family: 'Sacramento', cursive;
+            font-size: 48px;
+            color: #B46A72; /* Rosewood */
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background-color: #F7C8D3; /* Blush Petal */
+            margin: 0 auto 25px auto;
+            border-radius: 2px;
+        }
+
+        /* Paragraf Deskripsi */
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #2D3A47; /* Midnight Lagoon */
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        p.highlight {
+            background-color: #FFF7E6; /* Vanilla Cream */
+            padding: 12px 18px;
+            border-radius: 15px;
+            border-left: 4px solid #B46A72; /* Rosewood */
+            font-size: 14px;
+            color: #B46A72;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Responsive untuk Iframe / Mobile */
+        @media (max-width: 480px) {
+            .profile-card {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .greeting-tag {
+                font-size: 26px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <div class="greeting-tag">About Our Story</div>
+        
+        <h1>Profil Lumière &amp; Lullaby</h1>
+        
+        <div class="divider"></div>
+
+        <p>
+            Kami adalah toko lilin aromaterapi terpercaya yang menghadirkan berbagai produk bermutu tinggi dengan harga terbaik. Setiap lilin dibuat sepenuh hati untuk menciptakan suasana hangat, nyaman, dan menenangkan di ruangan Anda.
+        </p>
+
+        <p class="highlight">
+            ✨ Halaman Profil ini ditampilkan dengan rapi di dalam <i>iframe</i>.
+        </p>
+    </div>
+
+</body>
+</html>
